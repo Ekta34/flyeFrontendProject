@@ -31,7 +31,7 @@ const columns = [
     title: 'Bank Name',
     dataIndex: 'bank_name',
     key: 'bank_name',
-    width:'20%'
+    width:'20%',
   },
   {
     title: 'Branch',
@@ -115,18 +115,15 @@ class HomeView extends React.Component{
           </div>
           
 
-          <div className="tableContainer">
-            
+          <div className="tableContainer">            
                 <Table dataSource={this.props.bankData} columns={columns} 
                     bordered 
                     loading={this.props.isLoading}
                     size="small" 
                     rowKey="ifsc"
                     pagination={{current:this.state.currentPage,onChange:this.onChange,pageSize:10}} 
-                    scroll={{}}
-                />
-            
-            
+                    scroll={{y:400}}
+                />                     
           </div>
       </div>
     )
